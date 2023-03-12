@@ -1,25 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+//import { Product } from './components/Product';
+import { products } from './prods/products';
+
+import Header, { HeaderProps } from './components/Header';
+import Body from './components/Body';
+
+// build an instance of our AppHeaderProps to pass to the AppHeader component
+const headerProps: HeaderProps = {
+  title: '&&&?',
+  links: [
+    {
+      label: 'Main',
+      route: '???',
+    },
+    {
+      label: 'Marketplace',
+      route: '???',
+    },
+    {
+      label: 'Profile',
+      route: '???',
+    },
+    {
+      label: 'Cart',
+      route: '???',
+    },
+  ],
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className='App'>
+      <Header 
+        title={headerProps.title}
+        links={headerProps.links}
+      />
+      <Body contentsource='./root/btsconcert1'/>
+    </main>
   );
 }
 
